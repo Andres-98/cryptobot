@@ -1,0 +1,17 @@
+{
+  "name": "BotMamalon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-binance-api": "^0.12.5",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "telegraf": "^4.4.0"
+  }
+}
