@@ -8,7 +8,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const { isNumeric, costBreeding, symbols } = require('./helpers');
 
 
-bot.hashtag('slp', async (ctx)=>{
+bot.command('slp', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -34,7 +34,7 @@ bot.hashtag('slp', async (ctx)=>{
     };
 });
 
-bot.hashtag('axs', async (ctx)=>{
+bot.command('axs', async (ctx)=>{
     try{
         const resp = await CoinGeckoClient.simple.price({
             ids: ["axie-infinity"],
@@ -59,7 +59,7 @@ bot.hashtag('axs', async (ctx)=>{
     };
 });
 
-bot.hashtag('btc', async (ctx)=>{
+bot.command('btc', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -85,7 +85,7 @@ bot.hashtag('btc', async (ctx)=>{
     };
 });
 
-bot.hashtag('eth', async (ctx)=>{
+bot.command('eth', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -111,7 +111,7 @@ bot.hashtag('eth', async (ctx)=>{
     };
 });
 
-bot.hashtag('vet', async (ctx)=>{
+bot.command('vet', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -138,7 +138,7 @@ bot.hashtag('vet', async (ctx)=>{
 });
 
 
-bot.hashtag('btt', async (ctx)=>{
+bot.command('btt', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -164,7 +164,7 @@ bot.hashtag('btt', async (ctx)=>{
     };
 });
 
-bot.hashtag('ada', async (ctx)=>{
+bot.command('ada', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -190,7 +190,7 @@ bot.hashtag('ada', async (ctx)=>{
     };
 });
 
-bot.hashtag('bnb', async (ctx)=>{
+bot.command('bnb', async (ctx)=>{
     try{
         
         const resp = await CoinGeckoClient.simple.price({
@@ -217,19 +217,25 @@ bot.hashtag('bnb', async (ctx)=>{
 });
 
 bot.command('prices',async (ctx)=> {
-    
-    const resp = await CoinGeckoClient.simple.price({
-        ids: ["smooth-love-potion", "axie-infinity", "bitcoin", "ethereum"],
-        vs_currencies: ['eur', 'usd'],
-    });
-    const { data } = resp;
-    console.log(ctx.update.message.text);
-    ctx.reply(
-    `Price of SLP: \n${data["smooth-love-potion"].usd} USD \n${data["smooth-love-potion"].eur} EUR 
-    \nPrice of AXS: \n${data["axie-infinity"].usd} USD \n${data["axie-infinity"].eur} EUR
-    \nPrice of BTC: \n${data.bitcoin.usd} USD \n${data.bitcoin.eur} EUR
-    \nPrice of ETH: \n${data.ethereum.usd} USD \n${data.ethereum.eur} EUR`
-        );
+    try {
+        const resp = await CoinGeckoClient.simple.price({
+            ids: ["smooth-love-potion", "axie-infinity", "bitcoin", "ethereum"],
+            vs_currencies: ['eur', 'usd'],
+        });
+        const { data } = resp;
+        console.log(ctx.update.message.text);
+        ctx.reply(
+        `Price of SLP: \n${data["smooth-love-potion"].usd} USD \n${data["smooth-love-potion"].eur} EUR 
+        \nPrice of AXS: \n${data["axie-infinity"].usd} USD \n${data["axie-infinity"].eur} EUR
+        \nPrice of BTC: \n${data.bitcoin.usd} USD \n${data.bitcoin.eur} EUR
+        \nPrice of ETH: \n${data.ethereum.usd} USD \n${data.ethereum.eur} EUR`
+            );
+        
+    } catch (error) {
+
+        ctx.reply(`C kgo compa :,vv`);
+
+    };
     
 })
 
@@ -251,6 +257,8 @@ bot.command('usd', async (ctx)=> {
             }else{
                 ctx.reply("Comando invalido");
             }
+        }else{
+            ctx.reply("Comando invalido");
         }
     }catch(e){
         ctx.reply("Comando invalido");
@@ -279,6 +287,8 @@ bot.command('breed', async (ctx)=> {
             }else{
                 ctx.reply("Comando invalido");
             }
+        }else{
+            ctx.reply("Comando invalido");
         }
     }catch(e){
         ctx.reply("Comando invalido");
