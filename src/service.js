@@ -16,8 +16,8 @@ const getData = async (data) => {
     const symbolCoin = messageArray[0].replace('/', '');
     const coin = symbols[symbolCoin];
     if(messageArray.length === 3){
-        const valCoin = parseInt(messageArray[1]);
-        const porcent = parseFloat(messageArray[2]);
+        const valCoin = parseFloat(messageArray[1]);
+        const porcent = parseInt(messageArray[2]);
         if(isNumeric(valCoin) && isNumeric(porcent) && porcent > 0 && porcent <= 100){
             const data =  await callApi(coin, ['usd'])
             const value = valCoin*(porcent/100);
@@ -26,7 +26,7 @@ const getData = async (data) => {
             return "Comando Invalido";
         };
     }else if(messageArray.length === 2){
-        const valCoin = parseInt(messageArray[1]);
+        const valCoin = parseFloat(messageArray[1]);
         if(isNumeric(valCoin)){
             const data =  await callApi(coin, ['usd']);
             return `${valCoin} ${symbolCoin.toUpperCase()} = ${valCoin*data[coin].usd} USD`;
