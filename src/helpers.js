@@ -8,11 +8,12 @@ const symbols = {
     vet: 'vechain',
     btc: 'bitcoin',
     eth: 'ethereum',
-    btt: 'bittorrent',
+    btt: 'bittorrent-2',
     ada: 'cardano',
-    bnb: 'binance-coin',
+    bnb: 'binancecoin',
     slp: 'smooth-love-potion',
-    axs: 'axie-infinity'
+    axs: 'axie-infinity',
+    trx: 'tron'
 }
 
 module.exports = { isNumeric, costBreeding, symbols };

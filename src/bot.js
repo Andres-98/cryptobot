@@ -81,6 +81,15 @@ bot.command('bnb', async (ctx)=>{
     };
 });
 
+bot.command('trx', async (ctx)=>{
+    try{
+        const resp = await getData(ctx.update.message.text);
+        ctx.reply(resp);
+    }catch(e){
+        ctx.reply(`C kgo compa :,vv`)
+    };
+});
+
 bot.command('prices',async (ctx)=> {
     try {
         const message = await prices();
