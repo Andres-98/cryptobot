@@ -94,7 +94,7 @@ const breeding = async (data) => {
                 const { data } = resp;
                 return `${(costBreeding[valOne] + costBreeding[valTwo])
                     * data["smooth-love-potion"].usd
-                    + 4*data["axie-infinity"].usd} USD`;
+                    + 2*data["axie-infinity"].usd} USD`;
             }else{
                 return "Comando invalido";
             };
