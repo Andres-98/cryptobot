@@ -17,6 +17,25 @@ bot.command('slp', async (ctx)=>{
     };
 });
 
+bot.command('doge', async (ctx)=>{
+    try{
+        const resp = await getData(ctx.update.message.text);
+        ctx.reply(resp);
+    }catch(e){
+        ctx.reply(`C kgo compa :,vv`)
+    };
+});
+
+bot.command('xlm', async (ctx)=>{
+    try{
+        const resp = await getData(ctx.update.message.text);
+        ctx.reply(resp);
+    }catch(e){
+        ctx.reply(`C kgo compa :,vv`)
+    };
+});
+
+
 bot.command('axs', async (ctx)=>{
     try{
         const resp = await getData(ctx.update.message.text);

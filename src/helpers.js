@@ -13,7 +13,9 @@ const symbols = {
     bnb: 'binancecoin',
     slp: 'smooth-love-potion',
     axs: 'axie-infinity',
-    trx: 'tron'
+    trx: 'tron',
+    xlm: 'stellar',
+    doge: 'dogecoin'
 }
 
 module.exports = { isNumeric, costBreeding, symbols };
