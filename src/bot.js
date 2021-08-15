@@ -8,10 +8,19 @@ const { getData, breeding, usdToCrypto, prices } = require('./service');
 
 const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
+const list = {};
+
 const primaryFunction = async (ctx) => {
     try{
         const resp = await getData(ctx.update.message.text);
         ctx.reply(resp);
+        if(list[ctx.update.message.from.username]){
+            list[ctx.update.message.from.username] += 1;
+            ctx.reply(`${ctx.update.message.from.first_name} debes $${list[ctx.update.message.from.username]}`)
+        }else{
+            list[ctx.update.message.from.username] = 1;
+            ctx.reply(`${ctx.update.message.from.first_name} debes $${list[ctx.update.message.from.username]}`)
+        };
     }catch(e){
         ctx.reply(messageError);
     };
@@ -85,18 +94,18 @@ bot.command('myteam', async (ctx)=> {
                     ctx.replyWithPhoto({ url: element.image },{
                         caption:`Class: ${element.class} \nParts: \n${element.parts[2].type} : ${element.parts[2].name} - ${element.parts[3].type} : ${element.parts[3].name} \n${element.parts[4].type} : ${element.parts[4].name} - ${element.parts[5].type} : ${element.parts[5].name}`
                     });
-                 }
+                 };
             }else{
                 ctx.reply("Comando invalido");
-            }
+            };
         }else{
             ctx.reply("Comando invalido");
 
-        }
+        };
         
     }catch(e){
         ctx.reply("Comando invalido");
-    }
+    };
 });
 
 bot.command('earnings', async (ctx)=> {
@@ -110,15 +119,15 @@ bot.command('earnings', async (ctx)=> {
                 ctx.reply(`Current Balance: ${data.slp_holdings} \nSLP Unclaimed: ${data.slp_inventory}\nLifetime SLP Claimed: ${data.overall_farmed_slp}`);
             }else{
                 ctx.reply("Comando invalido");
-            }
+            };
         }else{
             ctx.reply("Comando invalido");
 
-        }
+        };
         
     }catch(e){
         ctx.reply("Comando invalido");
-    }
+    };
 });
 
 module.exports = bot;
