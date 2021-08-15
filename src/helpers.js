@@ -15,7 +15,8 @@ const symbols = {
     axs: 'axie-infinity',
     trx: 'tron',
     xlm: 'stellar',
-    doge: 'dogecoin'
+    doge: 'dogecoin',
+    pvu: 'plant-vs-undead-token'
 }
 
 module.exports = { isNumeric, costBreeding, symbols };

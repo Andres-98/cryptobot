@@ -100,6 +100,15 @@ bot.command('bnb', async (ctx)=>{
     };
 });
 
+bot.command('pvu', async (ctx)=>{
+    try{
+        const resp = await getData(ctx.update.message.text);
+        ctx.reply(resp);
+    }catch(e){
+        ctx.reply(`C kgo compa :,vv`)
+    };
+});
+
 bot.command('trx', async (ctx)=>{
     try{
         const resp = await getData(ctx.update.message.text);
