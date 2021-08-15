@@ -14,6 +14,7 @@ const symbols = {
     trx: 'tron',
     xlm: 'stellar',
     dot: 'polkadot',
+    xrp: 'ripple',
     slp: 'smooth-love-potion',
     axs: 'axie-infinity',
     pvu: 'plant-vs-undead-token',

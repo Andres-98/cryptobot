@@ -40,6 +40,8 @@ bot.command('pvu', async (ctx) => primaryFunction(ctx) );
 
 bot.command('trx', async (ctx) => primaryFunction(ctx) );
 
+bot.command('xrp', async (ctx) => primaryFunction(ctx) );
+
 bot.command('doge', async (ctx) => primaryFunction(ctx) );
 
 bot.command('prices',async (ctx)=> {
