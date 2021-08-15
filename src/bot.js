@@ -16,114 +16,31 @@ const primaryFunction = async (ctx) => {
     };
 }
 
-bot.command('slp', async (ctx)=>{
-    primaryFunction(ctx);
-});
+bot.command('slp', async (ctx) => primaryFunction(ctx) );
 
-bot.command('dot', async (ctx)=>{
-    primaryFunction(ctx);
-});
+bot.command('dot', async (ctx) => primaryFunction(ctx) );
 
-bot.command('doge', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('xlm', async (ctx) => primaryFunction(ctx) );
 
-bot.command('xlm', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('axs', async (ctx) => primaryFunction(ctx) );
 
+bot.command('btc', async (ctx) => primaryFunction(ctx) );
 
-bot.command('axs', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('eth', async (ctx) => primaryFunction(ctx) );
 
-bot.command('btc', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('vet', async (ctx) => primaryFunction(ctx) );
 
-bot.command('eth', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('btt', async (ctx) => primaryFunction(ctx) );
 
-bot.command('vet', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('ada', async (ctx) => primaryFunction(ctx) );
 
+bot.command('bnb', async (ctx) => primaryFunction(ctx) );
 
-bot.command('btt', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('pvu', async (ctx) => primaryFunction(ctx) );
 
-bot.command('ada', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('trx', async (ctx) => primaryFunction(ctx) );
 
-bot.command('bnb', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
-
-bot.command('pvu', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
-
-bot.command('trx', async (ctx)=>{
-    try{
-        const resp = await getData(ctx.update.message.text);
-        ctx.reply(resp);
-    }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
-    };
-});
+bot.command('doge', async (ctx) => primaryFunction(ctx) );
 
 bot.command('prices',async (ctx)=> {
     try {
@@ -132,7 +49,6 @@ bot.command('prices',async (ctx)=> {
     } catch (error) {
         ctx.reply(`C kgo compa :,vv`);
     };
-    
 })
 
 bot.command('usd', async (ctx)=> {
