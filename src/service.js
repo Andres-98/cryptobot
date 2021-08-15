@@ -4,12 +4,14 @@ const CoinGeckoClient = new CoinGecko();
 const { isNumeric, costBreeding, symbols } = require('./helpers');
 
 const callApi = async (coin, currency) => {
+
     const resp = await CoinGeckoClient.simple.price({
         ids: [coin],
         vs_currencies: currency
     });
+
     return resp.data;
-}
+};
 
 const getData = async (data) => {
     const messageArray = data.split(" ");
@@ -32,11 +34,11 @@ const getData = async (data) => {
             return `${valCoin} ${symbolCoin.toUpperCase()} = ${valCoin*data[coin].usd} USD`;
         }else{
             return "Comando invalido";
-        }
+        };
     }else{
         const data =  await callApi(coin, ['usd', 'eur']);
         return `Price of ${symbolCoin.toUpperCase()}: \n${data[coin].usd} USD \n${data[coin].eur} EUR`
-    }
+    };
 };
  
 
@@ -52,7 +54,7 @@ const usdToCrypto = async (data) => {
                 return `${valOne} USD = ${valOne/data[currency].usd} ${symbol.toUpperCase()}`;
             }else{
                 return "Comando invalido";
-            }
+            };
         }else{
             return "Comando invalido";
         };
@@ -67,6 +69,7 @@ const prices = async () => {
             ids: ["smooth-love-potion", "axie-infinity", "bitcoin", "ethereum"],
             vs_currencies: ['eur', 'usd'],
         });
+
         const { data } = resp;
         
         return `Price of SLP: \n${data["smooth-love-potion"].usd} USD \n${data["smooth-love-potion"].eur} EUR 
@@ -75,9 +78,9 @@ const prices = async () => {
         \nPrice of ETH: \n${data.ethereum.usd} USD \n${data.ethereum.eur} EUR`;
 
     } catch (error) {
-        return "Comando invalido"
-    }
-}
+        return "Comando invalido";
+    };
+};
 
 const breeding = async (data) => {
     try {
