@@ -4,15 +4,16 @@ const fetch = require('node-fetch');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-
 const { getData, breeding, usdToCrypto, prices } = require('./service');
+
+const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
 const primaryFunction = async (ctx) => {
     try{
         const resp = await getData(ctx.update.message.text);
         ctx.reply(resp);
     }catch(e){
-        ctx.reply(`C kgo compa :,vv`)
+        ctx.reply(messageError);
     };
 }
 
@@ -49,7 +50,7 @@ bot.command('prices',async (ctx)=> {
         const message = await prices();
         ctx.reply(message);
     } catch (error) {
-        ctx.reply(`C kgo compa :,vv`);
+        ctx.reply(messageError);
     };
 })
 
