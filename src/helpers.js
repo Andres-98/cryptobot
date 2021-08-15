@@ -14,10 +14,10 @@ const symbols = {
     trx: 'tron',
     xlm: 'stellar',
     dot: 'polkadot',
-    doge: 'dogecoin',
     slp: 'smooth-love-potion',
     axs: 'axie-infinity',
-    pvu: 'plant-vs-undead-token'
+    pvu: 'plant-vs-undead-token',
+    doge: 'dogecoin'
 }
 
 module.exports = { isNumeric, costBreeding, symbols };
