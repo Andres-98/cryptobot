@@ -11,11 +11,12 @@ const symbols = {
     btt: 'bittorrent-2',
     ada: 'cardano',
     bnb: 'binancecoin',
-    slp: 'smooth-love-potion',
-    axs: 'axie-infinity',
     trx: 'tron',
     xlm: 'stellar',
+    dot: 'polkadot',
     doge: 'dogecoin',
+    slp: 'smooth-love-potion',
+    axs: 'axie-infinity',
     pvu: 'plant-vs-undead-token'
 }
 

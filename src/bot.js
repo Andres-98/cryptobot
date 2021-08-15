@@ -7,14 +7,21 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const { getData, breeding, usdToCrypto, prices } = require('./service');
 
-
-bot.command('slp', async (ctx)=>{
+const primaryFunction = async (ctx) => {
     try{
         const resp = await getData(ctx.update.message.text);
         ctx.reply(resp);
     }catch(e){
         ctx.reply(`C kgo compa :,vv`)
     };
+}
+
+bot.command('slp', async (ctx)=>{
+    primaryFunction(ctx);
+});
+
+bot.command('dot', async (ctx)=>{
+    primaryFunction(ctx);
 });
 
 bot.command('doge', async (ctx)=>{
