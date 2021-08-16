@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const { getData, breeding, usdToCrypto, prices } = require('./service');
+const { getData, breeding, usdToCrypto, prices, getSymbols } = require('./service');
 
 const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
@@ -57,6 +57,15 @@ bot.command('doge', async (ctx) => primaryFunction(ctx) );
 bot.command('prices',async (ctx)=> {
     try {
         const message = await prices();
+        ctx.reply(message);
+    } catch (error) {
+        ctx.reply(messageError);
+    };
+});
+
+bot.command('cryptos', (ctx) => {
+    try {
+        const message = getSymbols();
         ctx.reply(message);
     } catch (error) {
         ctx.reply(messageError);
