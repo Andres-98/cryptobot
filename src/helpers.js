@@ -6,20 +6,20 @@ const isNumeric = (value) => {
 };
 
 const symbols = {
-    vet: 'vechain',
-    btc: 'bitcoin',
-    eth: 'ethereum',
-    btt: 'bittorrent-2',
     ada: 'cardano',
-    bnb: 'binancecoin',
-    trx: 'tron',
-    xlm: 'stellar',
-    dot: 'polkadot',
-    xrp: 'ripple',
-    slp: 'smooth-love-potion',
     axs: 'axie-infinity',
+    bnb: 'binancecoin',
+    btc: 'bitcoin',
+    btt: 'bittorrent-2',
+    doge: 'dogecoin',
+    dot: 'polkadot',
+    eth: 'ethereum',
     pvu: 'plant-vs-undead-token',
-    doge: 'dogecoin'
+    slp: 'smooth-love-potion',
+    trx: 'tron',
+    vet: 'vechain',
+    xlm: 'stellar',
+    xrp: 'ripple'
 };
 
 const getSymbols = () => {

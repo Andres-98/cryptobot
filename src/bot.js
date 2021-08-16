@@ -15,7 +15,7 @@ const primaryFunction = async (ctx) => {
     try{
         const resp = await getData(ctx.update.message.text);
         ctx.reply(resp);
-        if(ctx.update.message.from.username === 'Andresm98'){
+        /*if(ctx.update.message.from.username === 'Andresm98'){
             ctx.reply('No debes nada rey, gracias por existir ;)');
         }else if(ctx.update.message.from.username === 'metariaqer'){
             ctx.reply('Se donde vives perro, si das de baja el server te cae la ley >:V');
@@ -25,7 +25,7 @@ const primaryFunction = async (ctx) => {
         }else{
             list[ctx.update.message.from.username] = 1;
             ctx.reply(`${ctx.update.message.from.first_name} debes $${list[ctx.update.message.from.username]}`)
-        };
+        };*/
     }catch(e){
         ctx.reply(messageError);
     };
