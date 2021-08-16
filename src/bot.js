@@ -63,7 +63,7 @@ bot.command('prices',async (ctx)=> {
     };
 });
 
-bot.command('cryptos', (ctx) => {
+bot.command('help', (ctx) => {
     try {
         const message = getSymbols();
         ctx.reply(message);
