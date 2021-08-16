@@ -9,7 +9,7 @@ const { getSymbols } = require('./helpers');
 
 const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
-const list = {};
+//const list = {};
 
 const primaryFunction = async (ctx) => {
     try{
