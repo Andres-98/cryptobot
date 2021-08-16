@@ -13,15 +13,6 @@ const callApi = async (coin, currency) => {
     return resp.data;
 };
 
-const getSymbols = () => {
-    const keys = Object.keys(symbols);
-    let message = '';
-    for(let key of keys){
-        message += `\n/${key}`;
-    };
-    return message;
-};
-
 const getData = async (data) => {
     const messageArray = data.split(" ");
     const symbolCoin = messageArray[0]
@@ -120,4 +111,4 @@ const breeding = async (data) => {
     };
 };
 
-module.exports = { getData, breeding, usdToCrypto, prices, getSymbols };
+module.exports = { getData, breeding, usdToCrypto, prices };

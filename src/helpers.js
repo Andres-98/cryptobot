@@ -1,8 +1,9 @@
+
+const costBreeding = [150, 300, 450, 750, 1200, 1950, 3150];
+
 const isNumeric = (value) => {
 	return !isNaN(parseFloat(value)) && isFinite(value);
 };
-
-const costBreeding = [150, 300, 450, 750, 1200, 1950, 3150];
 
 const symbols = {
     vet: 'vechain',
@@ -19,6 +20,15 @@ const symbols = {
     axs: 'axie-infinity',
     pvu: 'plant-vs-undead-token',
     doge: 'dogecoin'
-}
+};
 
-module.exports = { isNumeric, costBreeding, symbols };
+const getSymbols = () => {
+    const keys = Object.keys(symbols);
+    let message = '';
+    for(let key of keys){
+        message += `\n/${key}`;
+    };
+    return message;
+};
+
+module.exports = { isNumeric, costBreeding, symbols, getSymbols };

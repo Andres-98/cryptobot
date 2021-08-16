@@ -4,7 +4,8 @@ const fetch = require('node-fetch');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const { getData, breeding, usdToCrypto, prices, getSymbols } = require('./service');
+const { getData, breeding, usdToCrypto, prices } = require('./service');
+const { getSymbols } = require('./helpers');
 
 const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
