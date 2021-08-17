@@ -15,7 +15,9 @@ const callApi = async (coin, currency) => {
 
 const getData = async (data) => {
     const messageArray = data.split(" ");
-    const symbolCoin = messageArray[0].replace('/', '');
+    const symbolCoin = messageArray[0]
+        .replace('/', '')
+        .replace('@price_crypto_mamalon_bot', '');
     const coin = symbols[symbolCoin];
     if(messageArray.length === 3){
         const valCoin = parseFloat(messageArray[1]);

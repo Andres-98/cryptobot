@@ -5,22 +5,27 @@ const fetch = require('node-fetch');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const { getData, breeding, usdToCrypto, prices } = require('./service');
+const { getSymbols } = require('./helpers');
 
 const messageError = 'Ha ocurrido un error fatal, contacte con el administrador';
 
-const list = {};
+//const list = {};
 
 const primaryFunction = async (ctx) => {
     try{
         const resp = await getData(ctx.update.message.text);
         ctx.reply(resp);
-        if(list[ctx.update.message.from.username]){
+        /*if(ctx.update.message.from.username === 'Andresm98'){
+            ctx.reply('No debes nada rey, gracias por existir ;)');
+        }else if(ctx.update.message.from.username === 'metariaqer'){
+            ctx.reply('Se donde vives perro, si das de baja el server te cae la ley >:V');
+        }else if(list[ctx.update.message.from.username]){
             list[ctx.update.message.from.username] += 1;
             ctx.reply(`${ctx.update.message.from.first_name} debes $${list[ctx.update.message.from.username]}`)
         }else{
             list[ctx.update.message.from.username] = 1;
             ctx.reply(`${ctx.update.message.from.first_name} debes $${list[ctx.update.message.from.username]}`)
-        };
+        };*/
     }catch(e){
         ctx.reply(messageError);
     };
@@ -57,6 +62,15 @@ bot.command('doge', async (ctx) => primaryFunction(ctx) );
 bot.command('prices',async (ctx)=> {
     try {
         const message = await prices();
+        ctx.reply(message);
+    } catch (error) {
+        ctx.reply(messageError);
+    };
+});
+
+bot.command('help', (ctx) => {
+    try {
+        const message = getSymbols();
         ctx.reply(message);
     } catch (error) {
         ctx.reply(messageError);
