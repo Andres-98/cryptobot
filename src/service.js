@@ -37,7 +37,7 @@ const getData = async (data) => {
         };
     }else{
         const data =  await callApi(coin, ['usd', 'eur']);
-        return `Price of ${symbolCoin.toUpperCase()}: \n${data[coin].usd} USD \n${data[coin].eur} EUR`
+        return `${symbolCoin.toUpperCase()} price: \n${data[coin].usd} USD \n${data[coin].eur} EUR`
     };
 };
  
@@ -72,10 +72,10 @@ const prices = async () => {
 
         const { data } = resp;
         
-        return `Price of SLP: \n${data["smooth-love-potion"].usd} USD \n${data["smooth-love-potion"].eur} EUR 
-        \nPrice of AXS: \n${data["axie-infinity"].usd} USD \n${data["axie-infinity"].eur} EUR
-        \nPrice of BTC: \n${data.bitcoin.usd} USD \n${data.bitcoin.eur} EUR
-        \nPrice of ETH: \n${data.ethereum.usd} USD \n${data.ethereum.eur} EUR`;
+        return `SLP: \n${data["smooth-love-potion"].usd} USD \n${data["smooth-love-potion"].eur} EUR 
+        \nAXS: \n${data["axie-infinity"].usd} USD \n${data["axie-infinity"].eur} EUR
+        \nBTC: \n${data.bitcoin.usd} USD \n${data.bitcoin.eur} EUR
+        \nETH: \n${data.ethereum.usd} USD \n${data.ethereum.eur} EUR`;
 
     } catch (error) {
         return "Comando invalido";
