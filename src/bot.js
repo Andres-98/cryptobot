@@ -100,7 +100,7 @@ bot.command('myteam', async (ctx)=> {
     try{
         const messageArray = ctx.update.message.text.split(" ");
         if(messageArray.length == 2){
-            const res = await fetch(`https:/api.lunaciaproxy.cloud/_axiesPlease/0x${messageArray[1]}`);
+            const res = await fetch(`https://api.lunaciaproxy.cloud/_axiesPlease/0x${messageArray[1]}`);
             const json = await res.json()
             if(json.available_axies){
                 for (let element of json.available_axies.results) {
@@ -126,7 +126,7 @@ bot.command('earnings', async (ctx)=> {
     try{
         const messageArray = ctx.update.message.text.split(" ");
         if(messageArray.length == 2){
-            const res = await fetch(`https:/api.lunaciaproxy.cloud/_schoEarnings/0x${messageArray[1]}`);
+            const res = await fetch(`https://api.lunaciaproxy.cloud/_schoEarnings/0x${messageArray[1]}`);
             const json = await res.json();
             if(json.success){
                 const data = json.earnings;
